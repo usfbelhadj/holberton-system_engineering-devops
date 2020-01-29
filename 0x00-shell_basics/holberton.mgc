@@ -1,2 +1,2 @@
-#!/bin/bash
-grep 'HOLBERTON' *.
+string HOLBERTON holberton data
+!:mime Holberton
