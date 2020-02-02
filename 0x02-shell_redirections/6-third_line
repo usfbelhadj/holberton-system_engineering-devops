@@ -1,2 +1,2 @@
 #!/bin/bash
-cut -f3 iacta
+cat -b 3 iacta
