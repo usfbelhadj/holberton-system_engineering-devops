@@ -5,6 +5,7 @@ f="holbertonschool"
 if [ ! -e "$f" ]
 then
 	echo "$f" file does not exist
+    exit 0
 fi
 echo "$f" file exists
 
