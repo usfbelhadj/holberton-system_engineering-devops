@@ -9,7 +9,7 @@ printf %s "server {
     listen [::]:80 default_server;
     root   /etc/nginx/html;
     index  index.html index.htm;
-    location /redirect_me {
+    Location: https://www.youtube.com/watch?v=QH2-TGUlwu4 {
         return 301 http://cuberule.com/;
     }
 }" > /etc/nginx/sites-available/default
