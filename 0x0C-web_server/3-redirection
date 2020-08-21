@@ -14,4 +14,4 @@ printf %s "server {
         return https://www.youtube.com/watch?v=eYDI8b5Nn5s;
     }
 }" > /etc/nginx/sites-available/default
-sudo service nginx restart
+service nginx restart
