@@ -3,5 +3,5 @@
 apt-get -y update
 apt-get -y install nginx
 echo "Holberton School" > /var/www/html/index.nginx-debian.html
-sed -i "/server_name _;/ a\\\trewrite ^/redirect_me http://www.holbertonschool.com permanent;" /etc/nginx/sites-available/default
-service nginx start
+sed -i "/server_name _;/redirect_me {\n\t\treturn 301 http://www.holbertonschool.com permanent;" /etc/nginx/sites-available/default
+sudo systemctl restart nginx
