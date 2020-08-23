@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#Bash script that configures a new Ubuntu machine to respect below requirements
+sudo apt-get update
+sudo apt-get -y install haproxy
+replace="ENABLED=0"
+with="ENABLED=1"
+sudo sed -i "s/$replace/$with" /etc/default/haproxy
+sudo sed -i "$ a\listen appname 0.0.0.0:80\n\tmode http" /etc/haproxy/haproxy.cfg
+sudo sed -i "$ a\ \tstats enable\n\tbalance roundrobin" /etc/haproxy/haproxy.cfg
+sudo sed -i "$ a\ \toption httpclose\n\toption forwardfor" /etc/haproxy/haproxy.cfg
+sudo sed -i "$ a\ \tserver 1392-web-01 34.75.15.77:80 check" /etc/haproxy/haproxy.cfg
+sudo sed -i "$ a\ \tserver 1392-web-02 35.243.226.232:80 check" /etc/haproxy/haproxy.cfg
+sudo systemctl restart haproxy
