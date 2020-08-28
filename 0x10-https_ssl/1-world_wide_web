@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#Bash script that will display information about subdomains.
+
+info()
+{
+    echo -n "The subdomain $2"
+    dig $2.$1 | grep "^$2.$1." |
+	awk '{ print " is a " $4 " record and points to " $5 }'
+}
+
+if [ "$2" ]; then
+    info $1 $2
+else
+    info $1 www
+    info $1 lb-01
+    info $1 web-01
+    info $1 web-02
+fi
