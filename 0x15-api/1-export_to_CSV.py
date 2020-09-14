@@ -4,6 +4,7 @@ import requests
 import json
 import sys
 
+
 if __name__ == "__main__":
 
     users_num = sys.argv[1]
