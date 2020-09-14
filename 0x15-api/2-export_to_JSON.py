@@ -15,9 +15,9 @@ if __name__ == "__main__":
     res1 = requests.get('https://jsonplaceholder.typicode.com/todos')
     dic = res1.json()
     for d in dic:
-        comp = d.get('completed')
-        if d.get('userId') == int(users_num):
-            di = {"task": d.get('title'),
+        comp = d.get("completed")
+        if d.get("userId") == int(users_num):
+            di = {"task": d.get("title"),
                   "completed": comp, "username": username}
             list_task.append(di)
     d1 = {users_num: list_task}
