@@ -7,9 +7,7 @@ import sys
 
 
 if __name__ == "__main__":
-
     users_num = sys.argv[1]
-
     res = requests.get('https://jsonplaceholder.typicode.com/users/{}'
                        .format(users_num))
     name = json.loads(res.text).get('name')
