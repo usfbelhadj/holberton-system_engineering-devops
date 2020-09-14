@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 '''Export to JSON'''
 import requests
+import json
 import sys
 
 
@@ -22,5 +23,5 @@ if __name__ == "__main__":
             list_task.append(di)
     d1 = {users_num: list_task}
     f = open("{}.json".format(users_num), "w+")
-    f.write(str(d1))
+    f.write(str(json.dumps(d1)))
     f.close()
