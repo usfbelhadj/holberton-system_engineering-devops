@@ -23,7 +23,7 @@ if __name__ == "__main__":
                     j += 1
                     list_title.append(d.get('title'))
     if dic == sys.argv[1]:
-        jobs_id = json.loads(res.text)
+        jobs_id = res.json()
     print('Employee {} is done with tasks({}/{}):'.format(name, j, i))
     for s in list_title:
         print('\t {}'.format(s))
