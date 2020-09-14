@@ -6,16 +6,15 @@ import sys
 
 
 if __name__ == "__main__":
-
     users_num = sys.argv[1]
     list_task = []
     di = {}
     d1 = {}
     res = requests.get('https://jsonplaceholder.typicode.com/users/{}'
                        .format(users_num))
-    username = json.loads(res.text).get('username')
+    username = res.json().get('username')
     res1 = requests.get('https://jsonplaceholder.typicode.com/todos')
-    dic = json.loads(res1.text)
+    dic = res1.json()
     for d in dic:
         comp = d.get('completed')
         if d.get('userId') == int(users_num):
