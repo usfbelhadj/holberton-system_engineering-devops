@@ -2,7 +2,6 @@
 '''Gather data from an API'''
 
 import requests
-import json
 import sys
 
 
@@ -10,9 +9,9 @@ if __name__ == "__main__":
     users_num = sys.argv[1]
     res = requests.get('https://jsonplaceholder.typicode.com/users/{}'
                        .format(users_num))
-    name = json.loads(res.text).get('name')
+    name = res.json().get('name')
     res1 = requests.get('https://jsonplaceholder.typicode.com/todos')
-    dic = json.loads(res1.text)
+    dic = res1.json()
     i = 0
     j = 0
     list_title = []
