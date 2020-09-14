@@ -19,7 +19,7 @@ if __name__ == "__main__":
     for d in dic:
         comp = d.get('completed')
         if d.get('userId') == int(users_num):
-            f = open("{}.csv".format(users_num), "w+")
+            f = open("{}.csv".format(users_num), "a")
             f.write('"{}","{}","{}","{}"'.format(users_num, username, comp, d.get('title')))
             f.write("\n")
             f.close()
