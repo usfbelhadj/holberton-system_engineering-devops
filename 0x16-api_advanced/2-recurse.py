@@ -19,7 +19,6 @@ def recurse(subreddit, hot_list=[], after=''):
         hot_list.append(i.get('data').get('title'))
     after = req.json().get('data', {}).get('after')
     if not after:
-        print(hot_list)
-        return
+        return hot_list
     else:
         return recurse(subreddit, hot_list, after)
