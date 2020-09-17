@@ -7,6 +7,7 @@ import requests
 
 
 def top_ten(subreddit):
+    '''top_ten'''
     st = 'https://www.reddit.com/r/'+subreddit+'/hot.json'
     headers = {'User-agent': 'X11; Linux x86_64'}
     req = requests.get(st, headers=headers)
