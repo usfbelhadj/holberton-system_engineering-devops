@@ -16,4 +16,4 @@ def top_ten(subreddit):
         print("None")
     data = data[0:10]
     for t in data:
-        print(t.get('data', {}).get('title', None))
+        print(t.get('data', {}).get('title'))
